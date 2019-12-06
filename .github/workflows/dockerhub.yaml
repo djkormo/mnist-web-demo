@@ -8,7 +8,7 @@ jobs:
 
     runs-on: ubuntu-latest
     env:
-      APP_NAME: mnist-web
+      APP_NAME: mnist-web-demo
 
     steps:
     - uses: actions/checkout@v1
@@ -16,6 +16,6 @@ jobs:
     - name: Publish to Docker Repository
       uses: elgohr/Publish-Docker-Github-Action@master
       with:
-        name: djkormo/docker-githubaction
+        name: djkormo/$APP_NAME
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
